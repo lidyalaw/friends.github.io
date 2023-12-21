@@ -53,21 +53,6 @@ function getQuote() {
   currentQuote = randomQuote.quote;
   currentAuthor = randomQuote.author;
 
-  $('#tweet-quote').attr(
-    'href',
-    'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' +
-      encodeURIComponent('"' + currentQuote + '" ' + currentAuthor)
-  );
-
-  $('#tumblr-quote').attr(
-    'href',
-    'https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption=' +
-      encodeURIComponent(currentAuthor) +
-      '&content=' +
-      encodeURIComponent(currentQuote) +
-      '&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button'
-  );
-
   $('.quote-text').animate({ opacity: 0 }, 500, function () {
     $(this).animate({ opacity: 1 }, 500);
     $('#text').text(randomQuote.quote);
