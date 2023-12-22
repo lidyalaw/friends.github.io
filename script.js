@@ -30,7 +30,8 @@ function getRandomQuote(i) {
 
 function getQuote() {
   let randomQuote = getRandomQuote(i);
-  if(i==quotesData.quotes.length) i=0; else i++;
+  i++;
+  if(i==quotesData.quotes.length) i=0; 
 
   currentQuote = randomQuote.quote;
   currentAuthor = randomQuote.author;
