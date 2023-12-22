@@ -28,7 +28,8 @@ function getRandomQuote(i) {
   return quotesData.quotes[i];
 }
 
-function getQuote(i) {
+function getQuote() {
+    if(i==quotesData.quotes.length) i=0; else i++;
   let randomQuote = getRandomQuote(i);
 
   currentQuote = randomQuote.quote;
@@ -62,8 +63,8 @@ function getQuote(i) {
 
 $(document).ready(function () {
   getQuotes().then(() => {
-    getQuote(i);
+    getQuote();
   });
 
-  $('#new-quote').on('click', getQuote(i++));
+  $('#new-quote').on('click', getQuote());
 });
