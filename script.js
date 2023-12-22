@@ -29,11 +29,10 @@ function getRandomQuote(i) {
 }
 
 function getQuote() {
-  let randomQuote = getRandomQuote(i);
-    /*
   if(i==quotesData.quotes.length){
       i=0;
-  } */
+  } 
+  let randomQuote = getRandomQuote(i);
 
   currentQuote = randomQuote.quote;
   currentAuthor = randomQuote.author;
