@@ -25,13 +25,15 @@ function getQuotes() {
 }
 
 function getRandomQuote(i) {
-  return quotesData.quotes[i++];
+  return quotesData.quotes[i];
 }
 
 function getQuote() {
   if(i==quotesData.quotes.length){
       i=0;
-  } 
+  } else {
+      i=i+1;
+  }
   let randomQuote = getRandomQuote(i);
 
   currentQuote = randomQuote.quote;
