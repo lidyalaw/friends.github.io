@@ -3,28 +3,10 @@
 const projectName = 'random-quote-machine';
 let quotesData;
 i=0;
-/*
-  Code by Gabriel Nunes
-  Modified by Todd Chaffee to use Camper gist for JSON Quote data.
-*/
 
-var colors = [
-  '#16a085',
-  '#27ae60',
-  '#2c3e50',
-  '#f39c12',
-  '#e74c3c',
-  '#9b59b6',
-  '#FB6964',
-  '#342224',
-  '#472E32',
-  '#BDBB99',
-  '#77B1A9',
-  '#73A857',
-  '#e1c4ff'
-];
-var currentQuote = '',
-  currentAuthor = '';
+var currentQuote  = '',
+    currentAuthor = '',
+    currentColor  = '';
 
 function getQuotes() {
   return $.ajax({
@@ -43,9 +25,7 @@ function getQuotes() {
 }
 
 function getRandomQuote(i) {
-  return quotesData.quotes[
-    Math.floor(i)
-  ];
+  return quotesData.quotes[i];
 }
 
 function getQuote(i) {
@@ -53,6 +33,7 @@ function getQuote(i) {
 
   currentQuote = randomQuote.quote;
   currentAuthor = randomQuote.author;
+  currentColor = randomQuote.color;
 
   $('.quote-text').animate({ opacity: 0 }, 500, function () {
     $(this).animate({ opacity: 1 }, 500);
@@ -66,14 +47,14 @@ function getQuote(i) {
 
   $('html body').animate(
     {
-      backgroundColor: colors[i],
-      color: colors[i]
+      backgroundColor: currentColor,
+      color: currentColor
     },
     1000
   );
   $('.button').animate(
     {
-      backgroundColor: colors[i]
+      backgroundColor: currentColor
     },
     1000
   );
