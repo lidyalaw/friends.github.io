@@ -24,12 +24,12 @@ function getQuotes() {
   });
 }
 
-function getRandomQuote(i) {
+function getRandomQuote() {
   return quotesData.quotes[i];
 }
 
-function getQuote(i) {
-  let randomQuote = getRandomQuote(i);
+function getQuote() {
+  let randomQuote = getRandomQuote();
   if(i===quotesData.quotes.length){
       i=0;
   } else {
@@ -66,8 +66,8 @@ function getQuote(i) {
 
 $(document).ready(function () {
   getQuotes().then(() => {
-    getQuote(i);
+    getQuote();
   });
 
-  $('#new-quote').on('click', getQuote(i));
+  $('#new-quote').on('click', getQuote());
 });
