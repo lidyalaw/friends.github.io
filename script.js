@@ -29,7 +29,7 @@ function getRandomQuote(i) {
 }
 
 function getQuote() {
-  if(i==quotesData.quotes.length){
+  if(i===quotesData.quotes.length){
       i=0;
   } else {
       i=i+1;
