@@ -25,16 +25,16 @@ function getQuotes() {
 }
 
 function getRandomQuote() {
+  i=i+1;
+  if(i===quotesData.quotes.length){
+      i=0;
+  }
   return quotesData.quotes[i];
 }
 
 function getQuote() {
   let randomQuote = getRandomQuote();
-  if(i===quotesData.quotes.length){
-      i=0;
-  } else {
-      i=i+1;
-  }
+    
   currentQuote = randomQuote.quote;
   currentAuthor = randomQuote.author;
   currentColor = randomQuote.color;
