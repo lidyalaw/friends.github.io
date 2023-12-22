@@ -28,7 +28,7 @@ function getRandomQuote(i) {
   return quotesData.quotes[i];
 }
 
-function getQuote() {
+function getQuote(i) {
   let randomQuote = getRandomQuote(i);
   if(i===quotesData.quotes.length){
       i=0;
@@ -66,8 +66,8 @@ function getQuote() {
 
 $(document).ready(function () {
   getQuotes().then(() => {
-    getQuote();
+    getQuote(i);
   });
 
-  $('#new-quote').on('click', getQuote());
+  $('#new-quote').on('click', getQuote(i));
 });
