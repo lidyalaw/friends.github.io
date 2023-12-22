@@ -53,6 +53,7 @@ function getQuote() {
 
   currentQuote = randomQuote.quote;
   currentAuthor = randomQuote.author;
+  currentColor = randomQuote.color;
 
   $('.quote-text').animate({ opacity: 0 }, 500, function () {
     $(this).animate({ opacity: 1 }, 500);
@@ -64,17 +65,16 @@ function getQuote() {
     $('#author').html(randomQuote.author);
   });
 
-  var color = Math.floor(Math.random() * colors.length);
   $('html body').animate(
     {
-      backgroundColor: colors[color],
-      color: colors[color]
+      backgroundColor: currentColor,
+      color: currentColor
     },
     1000
   );
   $('.button').animate(
     {
-      backgroundColor: colors[color]
+      backgroundColor: currentColor
     },
     1000
   );
