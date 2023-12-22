@@ -2,7 +2,7 @@
 // eslint-disable-next-line no-unused-vars
 const projectName = 'random-quote-machine';
 let quotesData;
-
+i=0;
 /*
   Code by Gabriel Nunes
   Modified by Todd Chaffee to use Camper gist for JSON Quote data.
@@ -42,18 +42,17 @@ function getQuotes() {
   });
 }
 
-function getRandomQuote() {
+function getRandomQuote(i) {
   return quotesData.quotes[
-    Math.floor(Math.random() * quotesData.quotes.length)
+    Math.floor(i)
   ];
 }
 
-function getQuote() {
-  let randomQuote = getRandomQuote();
+function getQuote(i) {
+  let randomQuote = getRandomQuote(i);
 
   currentQuote = randomQuote.quote;
   currentAuthor = randomQuote.author;
-  currentColor = randomQuote.color;
 
   $('.quote-text').animate({ opacity: 0 }, 500, function () {
     $(this).animate({ opacity: 1 }, 500);
@@ -67,14 +66,14 @@ function getQuote() {
 
   $('html body').animate(
     {
-      backgroundColor: currentColor,
-      color: currentColor
+      backgroundColor: colors[i],
+      color: colors[i]
     },
     1000
   );
   $('.button').animate(
     {
-      backgroundColor: currentColor
+      backgroundColor: colors[i]
     },
     1000
   );
@@ -82,8 +81,8 @@ function getQuote() {
 
 $(document).ready(function () {
   getQuotes().then(() => {
-    getQuote();
+    getQuote(i);
   });
 
-  $('#new-quote').on('click', getQuote);
+  $('#new-quote').on('click', getQuote(i++));
 });
