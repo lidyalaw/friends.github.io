@@ -29,13 +29,12 @@ function getRandomQuote(i) {
 }
 
 function getQuote() {
+  let randomQuote = getRandomQuote(i);
   if(i===quotesData.quotes.length){
       i=0;
   } else {
       i=i+1;
   }
-  let randomQuote = getRandomQuote(i);
-
   currentQuote = randomQuote.quote;
   currentAuthor = randomQuote.author;
   currentColor = randomQuote.color;
