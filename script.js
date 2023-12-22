@@ -20,7 +20,8 @@ var colors = [
   '#472E32',
   '#BDBB99',
   '#77B1A9',
-  '#73A857'
+  '#73A857',
+  '#e1c4ff'
 ];
 var currentQuote = '',
   currentAuthor = '';
@@ -30,7 +31,7 @@ function getQuotes() {
     headers: {
       Accept: 'application/json'
     },
-    url: 'https://gist.githubusercontent.com/lidyalaw/6ff2e5fcbacaafebfced5c30445eb43b/raw/e3d1c5a056671d7eee3f25985eaa423531a53b6d/quotes.json',
+    url: 'https://gist.githubusercontent.com/lidyalaw/6ff2e5fcbacaafebfced5c30445eb43b/raw/d1178071960a7acd4006f873ceeba6869976c35c/quotes.json',
     success: function (jsonQuotes) {
       if (typeof jsonQuotes === 'string') {
         quotesData = JSON.parse(jsonQuotes);
