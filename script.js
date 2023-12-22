@@ -30,7 +30,7 @@ function getRandomQuote(i) {
 
 function getQuote() {
   let randomQuote = getRandomQuote(i);
-  i++;
+  i=i+1;
     /*
   if(i==quotesData.quotes.length){
       i=0;
