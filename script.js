@@ -2,7 +2,7 @@
 // eslint-disable-next-line no-unused-vars
 const projectName = 'random-quote-machine';
 let quotesData;
-let i=-1;
+let i=0;
 
 var currentQuote  = '',
     currentAuthor = '',
