@@ -2,7 +2,7 @@
 // eslint-disable-next-line no-unused-vars
 const projectName = 'random-quote-machine';
 let quotesData;
-let i=0;
+let i=-1;
 
 var currentQuote  = '',
     currentAuthor = '',
@@ -66,7 +66,7 @@ function getQuote() {
 
 $(document).ready(function () {
   getQuotes().then(() => {
-    getQuote();
+    getQuote;
   });
 
   $('#new-quote').on('click', getQuote);
